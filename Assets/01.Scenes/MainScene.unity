@@ -523,6 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39dc579e1a20c1409186720b02ef6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: -2754516690189353657, guid: eba78d86222d0524bb4e7a18253cf426, type: 3}
 --- !u!4 &330002616
 Transform:
   m_ObjectHideFlags: 0
@@ -708,7 +709,7 @@ GameObject:
   - component: {fileID: 429437914}
   - component: {fileID: 429437913}
   m_Layer: 5
-  m_Name: Value
+  m_Name: OffensiveValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1037,7 +1038,7 @@ GameObject:
   - component: {fileID: 581232358}
   - component: {fileID: 581232357}
   m_Layer: 5
-  m_Name: Value
+  m_Name: DefensiveValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1363,7 +1364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 679431970}
   m_Layer: 5
-  m_Name: CriInfo
+  m_Name: CriticalInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1560,6 +1561,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b223c0025d762a4b96cd1e76f8ce329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameText: {fileID: 1444902373}
+  levelText: {fileID: 1714581347}
+  expText: {fileID: 1251459064}
+  moneyText: {fileID: 1148947392}
+  expImage: {fileID: 2123119991}
+  statusButton: {fileID: 1376751490}
+  inventoryButton: {fileID: 1311379330}
 --- !u!1 &922765635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1922,7 +1930,7 @@ GameObject:
   - component: {fileID: 1148947393}
   - component: {fileID: 1148947392}
   m_Layer: 5
-  m_Name: Text
+  m_Name: MoneyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2200,7 +2208,7 @@ GameObject:
   - component: {fileID: 1251459065}
   - component: {fileID: 1251459064}
   m_Layer: 5
-  m_Name: Text
+  m_Name: EXPText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2399,7 +2407,7 @@ GameObject:
   - component: {fileID: 1315162634}
   - component: {fileID: 1315162633}
   m_Layer: 5
-  m_Name: Value
+  m_Name: CriticalValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2799,7 +2807,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1443970257
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2875,6 +2883,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8a2767d6ff1624e9b3d58b67293e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offensiveValueText: {fileID: 429437913}
+  defensiveValueText: {fileID: 581232357}
+  hitPointValueText: {fileID: 1473191695}
+  criticalValueText: {fileID: 1315162633}
+  returnButton: {fileID: 1237475967}
 --- !u!1 &1444902371
 GameObject:
   m_ObjectHideFlags: 0
@@ -2966,7 +2979,7 @@ GameObject:
   - component: {fileID: 1473191696}
   - component: {fileID: 1473191695}
   m_Layer: 5
-  m_Name: Value
+  m_Name: HitPointValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3492,7 +3505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1825665960}
   m_Layer: 5
-  m_Name: ArmorInfo
+  m_Name: DefensiveInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3608,7 +3621,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1894820252}
   m_Layer: 5
-  m_Name: HPInfo
+  m_Name: HitPointInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3645,7 +3658,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1951186560}
   m_Layer: 5
-  m_Name: AttackInfo
+  m_Name: OffensiveInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3980,8 +3993,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 330002616}
+  - {fileID: 2031058519}
   - {fileID: 54348368}
   - {fileID: 1647223784}
   - {fileID: 1993029935}
-  - {fileID: 330002616}
-  - {fileID: 2031058519}

@@ -1,11 +1,25 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public Character character;
     [SerializeField] private UIMainMenu mainMenu;
-    [SerializeField] private UIStatus status;
-    [SerializeField] private UIInventory inventory;
+    public UIMainMenu MainMenu { get { return mainMenu; } }
 
-    public UIManager Instance { get { return this; } }
+    [SerializeField] private UIStatus status;
+    public UIStatus Status { get { return status; } }
+
+    [SerializeField] private UIInventory inventory;
+    public UIInventory Inventory { get { return inventory; } }
+
+    private static UIManager instance;
+    public static UIManager Instance { get { return instance; } }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 }

@@ -13,4 +13,15 @@ public class UIMainMenu : MonoBehaviour
     [SerializeField] private Button statusButton;
     [SerializeField] private Button inventoryButton;
 
+    private void Start()
+    {
+        UIManager uiManager = UIManager.Instance;
+        statusButton.onClick.AddListener(() => uiManager.Status.gameObject.SetActive(true));
+        inventoryButton.onClick.AddListener(() => uiManager.Inventory.gameObject.SetActive(true));
+    }
+
+    public void Set(CharacterData data)
+    {
+
+    }
 }
