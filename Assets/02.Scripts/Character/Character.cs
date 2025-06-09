@@ -1,6 +1,10 @@
-using UnityEngine;
-
-public class Character : MonoBehaviour
+public class Character
 {
-    public CharacterData data;
+    private CharacterData data;
+    public CharacterData Data { get { return data; } }
+
+    public Character(CharacterData _data)
+    {
+        data = _data;
+    }
 }

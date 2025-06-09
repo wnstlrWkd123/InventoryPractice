@@ -16,12 +16,18 @@ public class UIMainMenu : MonoBehaviour
     private void Start()
     {
         UIManager uiManager = UIManager.Instance;
+
         statusButton.onClick.AddListener(() => uiManager.Status.gameObject.SetActive(true));
         inventoryButton.onClick.AddListener(() => uiManager.Inventory.gameObject.SetActive(true));
     }
 
     public void Set(CharacterData data)
     {
+        nameText.text = data.Name;
+        levelText.text = $"Lv. <b>{data.Level.ToString("D2")}</b>";
+        expText.text = $"{data.CurrentEXP} / {data.RequiredEXP}";
+        moneyText.text = data.Money.ToString("N0");
 
+        expImage.fillAmount = data.CurrentEXP / data.RequiredEXP;
     }
 }

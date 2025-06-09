@@ -12,7 +12,7 @@ public class UIStatus : MonoBehaviour
 
     private void Start()
     {
-        returnButton.onClick.AddListener(() => this.gameObject.SetActive(false));
+        returnButton.onClick.AddListener(() => gameObject.SetActive(false));
     }
 
     public void Set(CharacterData data)
