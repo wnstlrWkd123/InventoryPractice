@@ -20,6 +20,6 @@ public class UIStatus : MonoBehaviour
         offensiveValueText.text = data.OffensivePower.ToString();
         defensiveValueText.text = data.DefensivePower.ToString();
         hitPointValueText.text = data.HitPoint.ToString();
-        criticalValueText.text = data.Critical.ToString();
+        criticalValueText.text = $"{data.Critical}%";
     }
 }
