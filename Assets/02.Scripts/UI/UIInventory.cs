@@ -12,8 +12,8 @@ public class UIInventory : MonoBehaviour
 
     [SerializeField] private Button returnButton;
 
-    // 슬롯에서 관리될 아이템들
     private List<UISlot> slotList = new List<UISlot>();
+    private List<ItemData> inventory;
 
     private void Start()
     {
@@ -27,15 +27,20 @@ public class UIInventory : MonoBehaviour
         for (int i = 0; i < slotCount; i++)
         {
             UISlot newSlot = Instantiate(slotPrefab, slotParent);
-            if (i < inventoryItems.Count)
+            if (i < inventory.Count)
             {
-                newSlot.SetItem(inventoryItems[i]);
+                newSlot.SetItem(inventory[i]);
             }
             slotList.Add(newSlot);
         }
 
-        itemCountText.text = inventoryItems.Count.ToString();
+        itemCountText.text = inventory.Count.ToString();
         slotCountText.text = $"/ {slotCount}";
         returnButton.onClick.AddListener(() => gameObject.SetActive(false));
+    }
+
+    public void Set(List<ItemData> _inventory)
+    {
+        inventory = _inventory;
     }
 }

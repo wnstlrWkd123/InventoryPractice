@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     private static UIManager instance;
     public static UIManager Instance { get { return instance; } }
 
+    public Character character;
+
     private void Awake()
     {
         if (instance == null)

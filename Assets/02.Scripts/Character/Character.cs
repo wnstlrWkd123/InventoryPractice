@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 public class Character
 {
@@ -14,5 +13,15 @@ public class Character
     {
         data = _data;
         inventory = _inventory;
+    }
+
+    public void Equip(ItemData item)
+    {
+
+    }
+
+    public void UnEquip(ItemData item)
+    {
+
     }
 }
