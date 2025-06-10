@@ -31,16 +31,20 @@ public class UISlot : MonoBehaviour
 
     private void OnClickButton()
     {
+        UIManager uiManager = UIManager.Instance;
+        Character character = uiManager.character;
+
         if (equipping)
         {
-            UIManager.Instance.character.UnEquip(item);
+            character.UnEquip(item);
         }
         else
         {
-            UIManager.Instance.character.Equip(item);
+            character.Equip(item);
         }
 
         equipping = !equipping;
         equipMark.gameObject.SetActive(equipping);
+        uiManager.Status.Set(character.Data);
     }
 }

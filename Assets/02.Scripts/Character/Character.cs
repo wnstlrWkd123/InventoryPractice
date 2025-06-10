@@ -17,11 +17,17 @@ public class Character
 
     public void Equip(ItemData item)
     {
-
+        data.AdditionalOffensivePower += item.offensivePower;
+        data.AdditionalDefensivePower += item.defensivePower;
+        data.AdditionalHitPoint += item.hitPoint;
+        data.AdditionalCritical += item.critical;
     }
 
     public void UnEquip(ItemData item)
     {
-
+        data.AdditionalOffensivePower -= item.offensivePower;
+        data.AdditionalDefensivePower -= item.defensivePower;
+        data.AdditionalHitPoint -= item.hitPoint;
+        data.AdditionalCritical -= item.critical;
     }
 }

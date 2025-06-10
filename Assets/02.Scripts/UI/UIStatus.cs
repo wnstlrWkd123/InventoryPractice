@@ -17,9 +17,9 @@ public class UIStatus : MonoBehaviour
 
     public void Set(CharacterData data)
     {
-        offensiveValueText.text = data.OffensivePower.ToString();
-        defensiveValueText.text = data.DefensivePower.ToString();
-        hitPointValueText.text = data.HitPoint.ToString();
-        criticalValueText.text = $"{data.Critical}%";
+        offensiveValueText.text = $"{data.OffensivePower + data.AdditionalOffensivePower} ({data.OffensivePower} + {data.AdditionalOffensivePower})";
+        defensiveValueText.text = $"{data.DefensivePower + data.AdditionalDefensivePower} ({data.DefensivePower} + {data.AdditionalDefensivePower})";
+        hitPointValueText.text = $"{data.HitPoint + data.AdditionalHitPoint} ({data.HitPoint} + {data.AdditionalHitPoint})";
+        criticalValueText.text = $"{data.Critical + data.AdditionalCritical}% ({data.Critical} + {data.AdditionalCritical})%";
     }
 }
