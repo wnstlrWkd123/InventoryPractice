@@ -4,28 +4,38 @@ using UnityEngine.UI;
 
 public class UIInventory : MonoBehaviour
 {
-    [SerializeField] private UISlot slotPrefab;  // 프리팹 연결
-    [SerializeField] private Transform slotParent; // Content Transform 연결
+    [SerializeField] private UISlot slotPrefab;
+    [SerializeField] private Transform slotParent;
+
+    [SerializeField] private Text itemCountText;
+    [SerializeField] private Text slotCountText;
 
     [SerializeField] private Button returnButton;
 
+    // 슬롯에서 관리될 아이템들
     private List<UISlot> slotList = new List<UISlot>();
 
     private void Start()
     {
-        returnButton.onClick.AddListener(() => gameObject.SetActive(false));
         InitInventoryUI();
     }
 
     private void InitInventoryUI()
     {
-        int itemCount = 20; // 예시: 슬롯 20개 생성
+        int slotCount = 30;
 
-        for (int i = 0; i < itemCount; i++)
+        for (int i = 0; i < slotCount; i++)
         {
             UISlot newSlot = Instantiate(slotPrefab, slotParent);
-            newSlot.SetItem(null); // 아직 아이템 없음
+            if (i < inventoryItems.Count)
+            {
+                newSlot.SetItem(inventoryItems[i]);
+            }
             slotList.Add(newSlot);
         }
+
+        itemCountText.text = inventoryItems.Count.ToString();
+        slotCountText.text = $"/ {slotCount}";
+        returnButton.onClick.AddListener(() => gameObject.SetActive(false));
     }
 }

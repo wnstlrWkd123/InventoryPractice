@@ -1,31 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class UISlot : MonoBehaviour
 {
     [SerializeField] private Image itemImage;
     [SerializeField] private Image equipMark;
 
-    private Item item;  // 예: 아이템 데이터
+    private ItemData item;
 
-    public void SetItem(Item newItem)
+    public void SetItem(ItemData _item)
     {
-        item = newItem;
-        //RefreshUI();
+        item = _item;
+        RefreshUI();
     }
 
-    //public void RefreshUI()
-    //{
-    //    if (item != null)
-    //    {
-    //        iconImage.sprite = item.icon;
-    //        countText.text = item.count.ToString();
-    //    }
-    //    else
-    //    {
-    //        iconImage.sprite = null;
-    //        countText.text = "";
-    //    }
-    //}
+    public void RefreshUI()
+    {
+        itemImage.sprite = item.sprite;
+        itemImage.gameObject.SetActive(true);
+    }
 }
